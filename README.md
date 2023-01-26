@@ -21,10 +21,10 @@ Esta versão 1.3.x é compatível com o Blender 3.3.x e inferior. Isso não func
 2. Baixe o arquivo.glTF-Blender-IO-MSFS-<version>.zip
 3. Descompacte o conteúdo do arquivo para um local temporário.
 4. Vá para a pasta e selecione a e, em seguida, copie-a para a área de transferência (Ctrl + "C").addonsio_scene_gltf2_msfs
-Agora navegue até a pasta do Blender, que - por padrão - pode ser encontrada nos seguintes locais: addons
-Windows: isso geralmente estará em .%AppData%\Blender Foundation\Blender\3.1\scripts\addons\
-Mac OS X: isso estará na sua Biblioteca (pressione a tecla Opção quando estiver no menu do Finder para abrir a pasta Biblioteca): .Go\Users\<username>\Library\Application Support\Blender\3.1\scripts\addons\
-Cole o na pasta do Blender (Ctrl + V).io_scene_gltf2_msfsaddons
+5. Agora navegue até a pasta do Blender, que - por padrão - pode ser encontrada nos seguintes locais: addons
+- Windows: isso geralmente estará em .%AppData%\Blender Foundation\Blender\3.1\scripts\addons\
+- Mac OS X: isso estará na sua Biblioteca (pressione a tecla Opção quando estiver no menu do Finder para abrir a pasta Biblioteca): .Go\Users\<username>\Library\Application Support\Blender\3.1\scripts\addons\
+6. Cole o na pasta do Blender (Ctrl + V).io_scene_gltf2_msfsaddons
 Depois de concluir o processo descrito acima, você precisará iniciar o Blender e, em seguida, ativar o plugin. A ativação é feita a partir das Preferências do Blender, como mostra a imagem abaixo:
 
-NOTA: Talvez seja necessário reiniciar o Blender novamente depois de ativar o plug-in para que todas as opções fiquem visíveis no IDE.
+**NOTA**: Talvez seja necessário reiniciar o Blender novamente depois de ativar o plug-in para que todas as opções fiquem visíveis no IDE.
