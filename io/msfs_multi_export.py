@@ -24,9 +24,9 @@ import xml.etree.ElementTree as etree
 class MSFSMultiExporterProperties:
     bpy.types.Scene.msfs_multi_exporter_current_tab = bpy.props.EnumProperty(
         items=(
-            ("OBJECTS", "Objects", ""),
-            ("PRESETS", " Presets", ""),
-            ("SETTINGS", "Settings", ""),
+            ("OBJECTS", "Objetos", ""),
+            ("PRESETS", " Predefinições", ""),
+            ("SETTINGS", "Configurações", ""),
         ),
     )
 

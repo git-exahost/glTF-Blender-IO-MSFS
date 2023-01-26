@@ -21,74 +21,74 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     #### General Options
     ## keep original texture option Check
     export_keep_originals: bpy.props.BoolProperty(
-        name="Keep original",
+        name="Mantenha-se original",
         description=(
-            "Keep original textures files if possible. "
-            "WARNING: if you use more than one texture, "
-            "where pbr standard requires only one, only one texture will be used. "
-            "This can lead to unexpected results"
+            "Mantenha os arquivos de texturas originais, se possível. "
+            "Aviso: se você usar mais de uma textura, "
+            "Onde o padrão PBR requer apenas um, apenas uma textura será usada. "
+            "Isso pode levar a resultados inesperados"
         ),
         default=False,
     )
     ## Texture directory path
     export_texture_dir: bpy.props.StringProperty(
-        name="Textures",
-        description="Folder to place texture files in. Relative to the .gltf file",
+        name="Texturas",
+        description="Pasta para colocar arquivos de textura em. Em relação ao arquivo .GLTF",
         default="",
     )
 
     ## Copyright string UI
     export_copyright: bpy.props.StringProperty(
         name="Copyright",
-        description="Legal rights and conditions for the model",
+        description="Direitos e condições legais para o modelo",
         default="",
     )
    
     ## Asobo Unique ID Check
     use_unique_id: bpy.props.BoolProperty(
         name='Use Asbob_unique_id Extension',
-        description='use ASOBO_unique_id extension',
+        description='Use a extensão de identificação exclusiva do ASOBO',
         default=True
     )
     
     #### Include Options
     ## Export Visible Only Check - TODO : See if this works
     use_visible: bpy.props.BoolProperty(
-        name="Visible Objects", description="Export visible objects only", default=False
+        name="Objetos visíveis", description="Exportar objetos visíveis apenas", default=False
     )
 
     ## Export Renderable Objects Check
     use_renderable: bpy.props.BoolProperty(
-        name="Renderable Objects",
-        description="Export renderable objects only",
+        name="Objetos renderizáveis",
+        description="exportarObjetosRenderizáveisApenas",
         default=False,
     )
 
     ## Export Active Collection Check
     use_active_collection: bpy.props.BoolProperty(
-        name="Active Collection",
-        description="Export objects in the active collection only",
+        name="Coleção ativa",
+        description="Exportar objetos apenas na coleção ativa",
         default=False,
     )
     
     ## Export Custom Propreties Check
     export_extras: bpy.props.BoolProperty(
-        name="Custom Properties",
-        description="Export custom properties as glTF extras",
+        name="Propriedades personalizadas [Defeito]",
+        description="Exportar propriedades personalizadas como extras GLTF",
         default=False,
     )
     
     ## Export Camera Check
     export_cameras: bpy.props.BoolProperty(
-        name="Cameras", description="Export cameras", default=False
+        name="Cameras", description="Câmeras de exportação", default=False
     )
 
     ## Export Punctual Lights Check
     export_lights: bpy.props.BoolProperty(
-        name="Punctual Lights",
-        description="Export directional, point, and spot lights. "
+        name="Luzes pontuais",
+        description="Exportar luzes direcionais, pontuais e manchas. "
         'Uses "KHR_lights_punctual" glTF extension',
-        default=False,
+        default=True,
     )
         
     #### Transform Options
@@ -100,50 +100,50 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     #### Geometry options
     ## Export Apply Modifiers Check
     export_apply: bpy.props.BoolProperty(
-        name="Apply Modifiers",
-        description="Apply modifiers (excluding Armatures) to mesh objects -"
-        "WARNING: prevents exporting shape keys",
-        default=False,
+        name="Aplique modificadores",
+        description="Aplicar modificadores (excluindo armaduras) aos objetos de malha -"
+        "Aviso: evita as chaves de forma de exportação",
+        default=True,
     )
     
     ## Export UVs Check
     export_texcoords: bpy.props.BoolProperty(
         name="UVs",
-        description="Export UVs (texture coordinates) with meshes",
+        description="Exportar UVs (coordenadas de textura) com malhas",
         default=True,
     )
 
     ## Export normals Check
     export_normals: bpy.props.BoolProperty(
-        name="Normals", description="Export vertex normals with meshes", default=True
+        name="Normals", description="Exportar normais de vértices com malhas", default=True
     )
 
     ## Export tangents Check
     export_tangents: bpy.props.BoolProperty(
-        name="Tangents", description="Export vertex tangents with meshes", default=False
+        name="Tangents [Não usar]", description="Não funciona no MSFS, gerra erro de tangentes...", default=False
     )
 
     ## Export Vertex Colors Check
     export_colors: bpy.props.BoolProperty(
         name="Vertex Colors",
-        description="Export vertex colors with meshes",
+        description="Exportar cores de vértices com malhas.",
         default=True,
     )
     
     ## Export Loose Edge Check
     use_mesh_edges: bpy.props.BoolProperty(
-        name="Loose Edges",
+        name="Bordas soltas",
         description=(
-            "Export loose edges as lines, using the material from the first material slot"
+            "Exportar bordas soltas como linhas, usando o material do primeiro slot de material"
         ),
         default=False,
     )
     
     ## Export Loose Points Check
     use_mesh_vertices: bpy.props.BoolProperty(
-        name="Loose Points",
+        name="Pontos soltos",
         description=(
-            "Export loose points as glTF points, using the material from the first material slot"
+            "Exportar pontos soltos como pontos GLTF, usando o material do primeiro slot de material"
         ),
         default=False,
     )
@@ -152,19 +152,19 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     export_materials: bpy.props.EnumProperty(
         name="Materials",
         items=(
-            ("EXPORT", "Export", "Export all materials used by included objects"),
+            ("EXPORT", "Export", "Exportar todos os materiais usados por objetos incluídos"),
             (
                 "PLACEHOLDER",
                 "Placeholder",
-                "Do not export materials, but write multiple primitive groups per mesh, keeping material slot information",
+                "Não exporte materiais, mas escreva vários grupos primitivos por malha, mantendo as informações do slot do material",
             ),
             (
                 "NONE",
                 "No export",
-                "Do not export materials, and combine mesh primitive groups, losing material slot information",
+                "Não exporte materiais e combine grupos primitivos de malha, perdendo informações de slot de material",
             ),
         ),
-        description="Export materials ",
+        description="Materiais de exportação ",
         default="EXPORT",
     )
 
@@ -175,19 +175,19 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
             (
                 "AUTO",
                 "Automatic",
-                "Save PNGs as PNGs and JPEGs as JPEGs. " "If neither one, use PNG",
+                "Salve PNGs como PNGs e JPEGs como JPEGs. "" Se não, use png",
             ),
             (
                 "JPEG",
                 "JPEG Format (.jpg)",
-                "Save images as JPEGs. (Images that need alpha are saved as PNGs though.) "
+                "Salve imagens como jpegs. (Imagens que precisam de alfa são salvas como PNGs.) "
                 "Be aware of a possible loss in quality",
             ),
             ("NONE", "None", "Don't export images"),
         ),
         description=(
-            "Output format for images. PNG is lossless and generally preferred, but JPEG might be preferable for web "
-            "applications due to the smaller file size. Alternatively they can be omitted if they are not needed"
+            "Formato de saída para imagens. O PNG é sem perdas e geralmente preferido, mas o JPEG pode ser preferível para a Web "
+            "Aplicativos devido ao tamanho menor do arquivo.Alternativamente, eles podem ser omitidos se não forem necessários"
         ),
         default="AUTO",
     )
@@ -195,29 +195,29 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     #### Animation Options
     ## Use Current Frame Check
     export_current_frame: bpy.props.BoolProperty(
-        name="Use Current Frame",
-        description="Export the scene in the current animation frame",
+        name="Use o quadro atual",
+        description="Exportar a cena no quadro de animação atual",
         default=False,
     )
     
     ##* Export Animation Options Check
     export_animations: bpy.props.BoolProperty(
-        name="Animations",
-        description="Exports active actions and NLA tracks as glTF animations",
+        name="Animações",
+        description="Exporta ações ativas e rastreia da NLA como animações GLTF",
         default=True,
     )
 
     ## Limit to Playback Range Check
     export_frame_range: bpy.props.BoolProperty(
-        name="Limit to Playback Range",
-        description="Clips animations to selected playback range",
+        name="Limite para a faixa de reprodução",
+        description="CLIPS Animações para a linha de reprodução selecionada",
         default=True,
     )
 
     ## Sampling Rate Slider (1-120)
     export_frame_step: bpy.props.IntProperty(
-        name="Sampling Rate",
-        description="How often to evaluate animated values (in frames)",
+        name="Taxa de amostragem",
+        description="Com que frequência avaliar valores animados (em quadros)",
         default=1,
         min=1,
         max=120,
@@ -225,8 +225,8 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
 
     ## Always Sample Animations Check
     export_force_sampling: bpy.props.BoolProperty(
-        name="Always Sample Animations",
-        description="Apply sampling to all animations",
+        name="Sempre amostra de animações",
+        description="Aplique amostragem a todas as animações",
         default=True,
     )
 
@@ -234,39 +234,39 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     export_nla_strips: bpy.props.BoolProperty(
         name="Group by NLA Track",
         description=(
-            "When on, multiple actions become part of the same glTF animation if "
-            "they're pushed onto NLA tracks with the same name. "
-            "When off, all the currently assigned actions become one glTF animation"
+            "Quando estão em várias ações, tornam -se parte da mesma animação GLTF se "
+            "Eles são empurrados para as faixas da NLA com o mesmo nome. "
+            "Quando está fora, todas as ações atualmente atribuídas se tornam uma animação GLTF"
         ),
         default=True,
     )
 
     ## Optimize Animation Size Check
     optimize_animation_size: bpy.props.BoolProperty(
-        name="Optimize Animation Size",
+        name="Otimize o tamanho da animação",
         description=(
-            "Reduces exported filesize by removing duplicate keyframes"
-            "Can cause problems with stepped animation"
+            "Reduza o tamanho do arquivo de exportação removendo os quadros -chave duplicados"
+            "Pode causar problemas com a animação escalonada"
         ),
         default=True,
     )
     
     ## Deformation Bones Only Check
     export_def_bones: bpy.props.BoolProperty(
-        name="Export Deformation Bones Only",
-        description="Export Deformation bones only (and needed bones for hierarchy)",
+        name="Exportar ossos de deformação apenas",
+        description="Apenas ossos de deformação de exportação (e os ossos necessários para a hierarquia)",
         default=False,
     )
 
     ##* Skinning Option Check
     export_skins: bpy.props.BoolProperty(
-        name="Skinning", description="Export skinning (armature) data", default=True
+        name="Skinning", description="Exportação de pele (armature) data", default=True
     )
 
     ## Export All Bone Influences Check
     export_all_influences: bpy.props.BoolProperty(
-        name="Include All Bone Influences",
-        description="Allow >4 joint vertex influences. Models may appear incorrectly in many viewers",
+        name="Inclua todas as influências ósseas",
+        description="ALlow> 4 influências conjuntas de vértice.Os modelos podem aparecer incorretamente em muitos espectadores",
         default=False,
     )
 

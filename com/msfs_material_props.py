@@ -43,8 +43,8 @@ class AsoboMaterialCommon:
             ("msfs_clearcoat", "Clearcoat", ""),
             ("msfs_parallax", "Parallax", ""),
             ("msfs_anisotropic", "Anisotropic", ""),
-            ("msfs_hair", "Hair", ""),
-            ("msfs_sss", "Sub-surface Scattering", ""),
+            ("msfs_hair", "Cabelo", ""),
+            ("msfs_sss", "Sub-surface Espalhamento", ""),
             ("msfs_invisible", "Invisível", ""),
             ("msfs_fake_terrain", "Terreno falso", ""),
             ("msfs_fresnel_fade", "Fresnel Fade", ""),
@@ -79,7 +79,7 @@ class AsoboMaterialCommon:
     )
     bpy.types.Material.msfs_metallic_factor = bpy.props.FloatProperty(
         name="Metallic Factor",
-        description="The metalness of the material. A value of 1.0 means the material is a metal. A value of 0.0 means the material is a dielectric. Values in between are for blending between metals and dielectrics such as dirty metallic surfaces. This value is linear. If a metallicRoughnessTexture is specified, this value is multiplied with the metallic texel values",
+        description="A metalness do material.Um valor de 1,0 significa que o material é um metal.Um valor de 0,0 significa que o material é um dielétrico.Os valores intermediários são para a mistura entre metais e dielétricos, como superfícies metálicas sujas.Este valor é linear.Se uma textura de metalicração for especificada, esse valor é multiplicado com os valores metálicos do Texel",
         min=0.0,
         max=1.0,
         default=Defaults.MetallicFactor,
@@ -88,7 +88,7 @@ class AsoboMaterialCommon:
     )
     bpy.types.Material.msfs_roughness_factor = bpy.props.FloatProperty(
         name="Roughness Factor",
-        description="The roughness of the material. A value of 1.0 means the material is completely rough. A value of 0.0 means the material is completely smooth. This value is linear. If a metallicRoughnessTexture is specified, this value is multiplied with the roughness texel values",
+        description="A rugosidade do material.Um valor de 1,0 significa que o material é completamente difícil.Um valor de 0,0 significa que o material é completamente suave.Este valor é linear.Se uma textura de metálica é especificada, esse valor é multiplicado com os valores da rugosidade Texel",
         min=0.0,
         max=1.0,
         default=Defaults.RoughnessFactor,
@@ -97,7 +97,7 @@ class AsoboMaterialCommon:
     )
     bpy.types.Material.msfs_normal_scale = bpy.props.FloatProperty(
         name="Normal Scale",
-        description="The scalar multiplier applied to each normal vector of the texture. This value is ignored if normalTexture is not specified",
+        description="O multiplicador escalar aplicado a cada vetor normal da textura.Este valor é ignorado se a textura normal não for especificada",
         min=0.0,
         max=1.0,
         default=Defaults.NormalScale,
@@ -106,7 +106,7 @@ class AsoboMaterialCommon:
     )
     bpy.types.Material.msfs_emissive_scale = bpy.props.FloatProperty(
         name="Emissive Scale",
-        description="The roughness of the material. A value of 1.0 means the material is completely rough. A value of 0.0 means the material is completely smooth. This value is linear. If a metallicRoughnessTexture is specified, this value is multiplied with the roughness texel values.",
+        description="A rugosidade do material.Um valor de 1,0 significa que o material é completamente difícil.Um valor de 0,0 significa que o material é completamente suave.Este valor é linear.Se uma textura de metálica for especificada, esse valor será multiplicado com os valores de rugosidade do Texel.",
         min=0.0,
         max=1.0,
         default=Defaults.EmissiveScale,
@@ -119,22 +119,22 @@ class AsoboMaterialCommon:
             (
                 "OPAQUE",
                 "Opaque",
-                "The rendered output is fully opaque and any alpha value is ignored",
+                "A saída renderizada é totalmente opaca e qualquer valor alfa é ignorado",
             ),
             (
                 "MASK",
                 "Mask",
-                "The rendered output is either fully opaque or fully transparent depending on the alpha value and the specified alpha cutoff value. This mode is used to simulate geometry such as tree leaves or wire fences",
+                "A saída renderizada é totalmente opaca ou totalmente transparente, dependendo do valor alfa e do valor de corte alfa especificado.Este modo é usado para simular geometria, como folhas de árvore ou cercas de arame",
             ),
             (
                 "BLEND",
                 "Blend",
-                "The rendered output is combined with the background using the normal painting operation (i.e. the Porter and Duff over operator). This mode is used to simulate geometry such as gauze cloth or animal fur",
+                "A saída renderizada é combinada com o plano de fundo usando a operação de pintura normal (isto é, o Porter e Duff sobre o operador).Este modo é usado para simular geometria, como pano de gaze ou peles de animais",
             ),
             (
                 "DITHER",
                 "Dither",
-                "The rendered output is blend with dithering dot pattern",
+                "A saída renderizada é misturada com padrão de ponto de endividamento",
             ),
         ),
         default=Defaults.AlphaMode,
@@ -143,7 +143,7 @@ class AsoboMaterialCommon:
     )
     bpy.types.Material.msfs_alpha_cutoff = bpy.props.FloatProperty(
         name="Alpha Cutoff",
-        description="When alphaMode is set to MASK the alphaCutoff property specifies the cutoff threshold. If the alpha value is greater than or equal to the alphaCutoff value then it is rendered as fully opaque, otherwise, it is rendered as fully transparent. alphaCutoff value is ignored for other modes",
+        description="Quando o Alphamode é definido para mascarar a propriedade Alphacutoff especifica o limite de corte.Se o valor alfa for maior ou igual ao valor do Alphacutoff, será renderizado como totalmente opaco; caso contrário, será renderizado como totalmente transparente.O valor do Alphacutoff é ignorado para outros modos",
         min=0.0,
         max=1.0,
         default=Defaults.AlphaCutoff,
@@ -152,7 +152,7 @@ class AsoboMaterialCommon:
     )
     bpy.types.Material.msfs_double_sided = bpy.props.BoolProperty(
         name="Double Sided",
-        description="The doubleSided property specifies whether the material is double sided. When this value is false, back-face culling is enabled. When this value is true, back-face culling is disabled and double sided lighting is enabled. The back-face must have its normals reversed before the lighting equation is evaluated",
+        description="A propriedade dupla especifica se o material é dupla face.Quando esse valor é falso, o abate de face traseira está ativado.Quando esse valor é verdadeiro, o abate de face traseira é desativado e a iluminação de dupla face está ativada.A face traseira deve ter seus normais revertidos antes que a equação de iluminação seja avaliada",
         default=Defaults.DoubleSided,
         update=MSFS_Material_Property_Update.update_double_sided,
         options=set(),
