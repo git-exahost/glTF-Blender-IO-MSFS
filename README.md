@@ -8,7 +8,7 @@ Em MSFS Material Params agora é possicel adicionar valores acima de 1 em Emissi
 
 Para que este recuso funcione é necessário atualizar o plugin **glTF 2.0 format** utilizando o link abaixo:
 <br>
-(https://github.com/git-exahost/io_scene_gltf2)
+https://github.com/git-exahost/io_scene_gltf2
 
 
 ### Instalação
