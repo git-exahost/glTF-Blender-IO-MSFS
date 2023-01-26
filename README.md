@@ -20,7 +20,7 @@ Esta versão 1.3.x é compatível com o Blender 3.3.x e inferior. Isso não func
 1. Feche o Blender se você o tiver aberto.<br>
 2. Baixe o arquivo **glTF-Blender-IO-MSFS** clicando no icone **<> Code** em seguida clicando em **Download ZIP**
 3. Descompacte o conteúdo do arquivo para um local temporário.
-4. Vá para a pasta e selecione a e, em seguida, copie-a para a área de transferência *io_scene_gltf2_msfs*
+4. Vá para a pasta **.%AppData%\Blender Foundation\Blender\3.3\scripts\addons\** e selecione todos os arquivos, em seguida, copie-a para a área de transferência 
 5. Agora navegue até a pasta do Blender, que - por padrão - pode ser encontrada nos seguintes locais: addons
 - Windows: isso geralmente estará em .%AppData%\Blender Foundation\Blender\3.3\scripts\addons\
 - Mac OS X: isso estará na sua Biblioteca (pressione a tecla Opção quando estiver no menu do Finder para abrir a pasta Biblioteca): .Go\Users\<username>\Library\Application Support\Blender\3.3\scripts\addons\
