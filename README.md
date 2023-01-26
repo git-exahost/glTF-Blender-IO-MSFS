@@ -23,7 +23,6 @@ Esta versão 1.3.x é compatível com o Blender 3.3.x e inferior. Isso não func
 4. Agora navegue até a pasta **%AppData%\Blender Foundation\Blender\3.3\scripts\addons**, crie a pasta **io_scene_gltf2_msfs** e cole todos os arquivos nesta pasta;
 
 - Mac OS X: isso estará na sua Biblioteca (pressione a tecla Opção quando estiver no menu do Finder para abrir a pasta Biblioteca): .Go\Users\<username>\Library\Application Support\Blender\3.3\scripts\addons\;
-5. Cole o na pasta do Blender addons *io_scene_gltf2_msfs*.
 
   Depois de concluir o processo descrito acima, você precisará iniciar o Blender e, em seguida, ativar o plugin. A ativação é feita a partir das Preferências do Blender.
 
