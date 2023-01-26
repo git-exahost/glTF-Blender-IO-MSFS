@@ -25,6 +25,7 @@ Esta versão 1.3.x é compatível com o Blender 3.3.x e inferior. Isso não func
 - Windows: isso geralmente estará em .%AppData%\Blender Foundation\Blender\3.1\scripts\addons\
 - Mac OS X: isso estará na sua Biblioteca (pressione a tecla Opção quando estiver no menu do Finder para abrir a pasta Biblioteca): .Go\Users\<username>\Library\Application Support\Blender\3.1\scripts\addons\
 6. Cole o na pasta do Blender (Ctrl + V).io_scene_gltf2_msfsaddons
-Depois de concluir o processo descrito acima, você precisará iniciar o Blender e, em seguida, ativar o plugin. A ativação é feita a partir das Preferências do Blender, como mostra a imagem abaixo:
+
+  Depois de concluir o processo descrito acima, você precisará iniciar o Blender e, em seguida, ativar o plugin. A ativação é feita a partir das Preferências do Blender, como mostra a imagem abaixo:
 
 **NOTA**: Talvez seja necessário reiniciar o Blender novamente depois de ativar o plug-in para que todas as opções fiquem visíveis no IDE.
