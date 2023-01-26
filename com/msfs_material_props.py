@@ -114,7 +114,7 @@ class AsoboMaterialCommon:
         options=set(),
     )
     bpy.types.Material.msfs_alpha_mode = bpy.props.EnumProperty(
-        name="Alpha Mode",
+        name="Modo alfa",
         items=(
             (
                 "OPAQUE",
@@ -142,7 +142,7 @@ class AsoboMaterialCommon:
         options=set(),
     )
     bpy.types.Material.msfs_alpha_cutoff = bpy.props.FloatProperty(
-        name="Alpha Cutoff",
+        name="Corte alfa",
         description="Quando o Alphamode é definido para mascarar a propriedade Alphacutoff especifica o limite de corte.Se o valor alfa for maior ou igual ao valor do Alphacutoff, será renderizado como totalmente opaco; caso contrário, será renderizado como totalmente transparente.O valor do Alphacutoff é ignorado para outros modos",
         min=0.0,
         max=1.0,
@@ -151,7 +151,7 @@ class AsoboMaterialCommon:
         options=set(),
     )
     bpy.types.Material.msfs_double_sided = bpy.props.BoolProperty(
-        name="Double Sided",
+        name="Dupla face",
         description="A propriedade dupla especifica se o material é dupla face.Quando esse valor é falso, o abate de face traseira está ativado.Quando esse valor é verdadeiro, o abate de face traseira é desativado e a iluminação de dupla face está ativada.A face traseira deve ter seus normais revertidos antes que a equação de iluminação seja avaliada",
         default=Defaults.DoubleSided,
         update=MSFS_Material_Property_Update.update_double_sided,
@@ -160,13 +160,13 @@ class AsoboMaterialCommon:
 
     # Textures (reused across material types, but named different)
     bpy.types.Material.msfs_base_color_texture = bpy.props.PointerProperty(
-        name="Base Color Texture",
+        name="Textura da cor base",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_base_color_texture,
     )
     bpy.types.Material.msfs_occlusion_metallic_roughness_texture = (
         bpy.props.PointerProperty(
-            name="Occlusion Metallic Roughness Texture",
+            name="Textura de rugosidade metálica de oclusão",
             type=bpy.types.Image,
             update=MSFS_Material_Property_Update.update_comp_texture,
         )
@@ -178,12 +178,12 @@ class AsoboMaterialCommon:
         update=MSFS_Material_Property_Update.update_normal_texture,
     )
     bpy.types.Material.msfs_blend_mask_texture = bpy.props.PointerProperty(
-        name="Blend Mask Texture",
+        name="Misture a textura da máscara",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_blend_mask_texture,
     )
     bpy.types.Material.msfs_dirt_texture = bpy.props.PointerProperty(
-        name="Dirt Texture",
+        name="Textura de sujeira",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_dirt_texture,
     )
