@@ -19,13 +19,12 @@ Esta versão 1.3.x é compatível com o Blender 3.3.x e inferior. Isso não func
 
 1. Feche o Blender se você o tiver aberto;<br>
 2. Baixe o arquivo **glTF-Blender-IO-MSFS** clicando no icone **<> Code** em seguida clicando em **Download ZIP**;
-3. Descompacte o conteúdo do arquivo para um local temporário;
-4. Abra o Zip baixado e selecione todos os arquivos, em seguida, copie-a para a área de transferência ;
-5. Agora navegue até a pasta **%AppData%\Blender Foundation\Blender\3.3\scripts\addons**, crie a pasta **io_scene_gltf2_msfs** e cole todos os arquivos nesta pasta;
+3. Abra o Zip baixado e selecione todos os arquivos, em seguida, copie-a para a área de transferência ;
+4. Agora navegue até a pasta **%AppData%\Blender Foundation\Blender\3.3\scripts\addons**, crie a pasta **io_scene_gltf2_msfs** e cole todos os arquivos nesta pasta;
 
 - Mac OS X: isso estará na sua Biblioteca (pressione a tecla Opção quando estiver no menu do Finder para abrir a pasta Biblioteca): .Go\Users\<username>\Library\Application Support\Blender\3.3\scripts\addons\
 - 
-6. Cole o na pasta do Blender addons *io_scene_gltf2_msfs* 
+5. Cole o na pasta do Blender addons *io_scene_gltf2_msfs* 
 
   Depois de concluir o processo descrito acima, você precisará iniciar o Blender e, em seguida, ativar o plugin. A ativação é feita a partir das Preferências do Blender.
 
