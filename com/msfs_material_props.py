@@ -517,7 +517,7 @@ class AsoboDayNightCycle:
     SerializedName = "ASOBO_material_day_night_switch"
 
     bpy.types.Material.msfs_day_night_cycle = bpy.props.BoolProperty(
-        name="Ciclo da noite do dia",
+        name="Ciclo noite/dia",
         description="O emissivo estará relacionado ao ciclo da noite do dia do jogo. Quando esse valor é falso, o emissivo está sempre ligado",
         default=False,
         options=set(),
@@ -552,7 +552,7 @@ class AsoboDisableMotionBlur:
     SerializedName = "ASOBO_material_disable_motion_blur"
 
     bpy.types.Material.msfs_disable_motion_blur = bpy.props.BoolProperty(
-        name="Disable Motion Blur",
+        name="Desativar Motion Blur",
         description="Quando esse valor está ligado, o MotionBlur está desativado no material, independentemente do que seja definido em opções gráficas",
         default=False,
         options=set(),
@@ -914,7 +914,7 @@ class AsoboMaterialShadowOptions:
         noCastShadow = False
 
     bpy.types.Material.msfs_no_cast_shadow = bpy.props.BoolProperty(
-        name="Não lance sombras",
+        name="Não projetar sombras",
         default=Defaults.noCastShadow,
         options=set(),
     )
