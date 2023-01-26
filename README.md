@@ -17,10 +17,10 @@ Para instalar o plugin do Blender, siga estes passos simples:
 
 Esta versão 1.3.x é compatível com o Blender 3.3.x e inferior. Isso não funcionará com o Blender 3.4 e superior.
 
-Feche o Blender se você o tiver aberto.
-Baixe o arquivo.glTF-Blender-IO-MSFS-<version>.zip
-Descompacte o conteúdo do arquivo para um local temporário.
-Vá para a pasta e selecione a e, em seguida, copie-a para a área de transferência (Ctrl + "C").addonsio_scene_gltf2_msfs
+1. Feche o Blender se você o tiver aberto.<br>
+2. Baixe o arquivo.glTF-Blender-IO-MSFS-<version>.zip
+3. Descompacte o conteúdo do arquivo para um local temporário.
+4. Vá para a pasta e selecione a e, em seguida, copie-a para a área de transferência (Ctrl + "C").addonsio_scene_gltf2_msfs
 Agora navegue até a pasta do Blender, que - por padrão - pode ser encontrada nos seguintes locais: addons
 Windows: isso geralmente estará em .%AppData%\Blender Foundation\Blender\3.1\scripts\addons\
 Mac OS X: isso estará na sua Biblioteca (pressione a tecla Opção quando estiver no menu do Finder para abrir a pasta Biblioteca): .Go\Users\<username>\Library\Application Support\Blender\3.1\scripts\addons\
