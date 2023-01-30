@@ -33,7 +33,7 @@ class AsoboMaterialCommon:
     bpy.types.Material.msfs_material_type = bpy.props.EnumProperty(
         name="Type",
         items=(
-            ("NONE", "Disabled", ""),
+            ("NONE", "Desabilitado", ""),
             ("msfs_standard", "Padrão", ""),
             ("msfs_geo_decal", "Decalque", ""),
             ("msfs_geo_decal_frosted", "Geo Decal Frosted", ""),
@@ -48,7 +48,7 @@ class AsoboMaterialCommon:
             ("msfs_invisible", "Invisível", ""),
             ("msfs_fake_terrain", "Terreno falso", ""),
             ("msfs_fresnel_fade", "Fresnel Fade", ""),
-            ("msfs_environment_occluder", "Ocluder de ambiente", ""),
+            ("msfs_environment_occluder", "Oclusão de ambiente", ""),
             ("msfs_ghost", "Fantasma", ""),
         ),
         default="NONE",
@@ -78,8 +78,8 @@ class AsoboMaterialCommon:
         options={"ANIMATABLE"},
     )
     bpy.types.Material.msfs_metallic_factor = bpy.props.FloatProperty(
-        name="Metallic Factor",
-        description="A metalness do material.Um valor de 1,0 significa que o material é um metal.Um valor de 0,0 significa que o material é um dielétrico.Os valores intermediários são para a mistura entre metais e dielétricos, como superfícies metálicas sujas.Este valor é linear.Se uma textura de metalicração for especificada, esse valor é multiplicado com os valores metálicos do Texel",
+        name="Fator metálico",
+        description="A metalness do material. Um valor de 1,0 significa que o material é um metal. Um valor de 0,0 significa que o material é um dielétrico. Os valores intermediários são para a mistura entre metais e dielétricos, como superfícies metálicas sujas.Este valor é linear.Se uma textura de metalicração for especificada, esse valor é multiplicado com os valores metálicos do Texel",
         min=0.0,
         max=1.0,
         default=Defaults.MetallicFactor,
@@ -87,7 +87,7 @@ class AsoboMaterialCommon:
         options={"ANIMATABLE"},
     )
     bpy.types.Material.msfs_roughness_factor = bpy.props.FloatProperty(
-        name="Roughness Factor",
+        name="Fator de rugosidade",
         description="A rugosidade do material.Um valor de 1,0 significa que o material é completamente difícil.Um valor de 0,0 significa que o material é completamente suave.Este valor é linear.Se uma textura de metálica é especificada, esse valor é multiplicado com os valores da rugosidade Texel",
         min=0.0,
         max=1.0,
@@ -96,7 +96,7 @@ class AsoboMaterialCommon:
         options={"ANIMATABLE"},
     )
     bpy.types.Material.msfs_normal_scale = bpy.props.FloatProperty(
-        name="Normal Scale",
+        name="Escala normal",
         description="O multiplicador escalar aplicado a cada vetor normal da textura.Este valor é ignorado se a textura normal não for especificada",
         min=0.0,
         max=1.0,
@@ -105,7 +105,7 @@ class AsoboMaterialCommon:
         options=set(),
     )
     bpy.types.Material.msfs_emissive_scale = bpy.props.FloatProperty(
-        name="Emissive Scale",
+        name="Escala emissiva",
         description="A rugosidade do material.Um valor de 1,0 significa que o material é completamente difícil.Um valor de 0,0 significa que o material é completamente suave.Este valor é linear.Se uma textura de metálica for especificada, esse valor será multiplicado com os valores de rugosidade do Texel.",
         min=0.0,
         max=1.0,
@@ -173,7 +173,7 @@ class AsoboMaterialCommon:
     )
 
     bpy.types.Material.msfs_normal_texture = bpy.props.PointerProperty(
-        name="Normal Texture",
+        name="Textura normal",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_normal_texture,
     )
@@ -194,28 +194,28 @@ class AsoboMaterialCommon:
         update=MSFS_Material_Property_Update.update_extra_slot1_texture,
     )
     bpy.types.Material.msfs_opacity_texture = bpy.props.PointerProperty(
-        name="Opacity Texture", type=bpy.types.Image
+        name="Textura da opacidade", type=bpy.types.Image
     )
     bpy.types.Material.msfs_emissive_texture = bpy.props.PointerProperty(
-        name="Emissive Texture",
+        name="Textura emissiva",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_emissive_texture,
     )
     bpy.types.Material.msfs_detail_color_texture = bpy.props.PointerProperty(
-        name="Detail Color Texture",
+        name="Detalhe a textura da cor",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_detail_color_texture,
     )
     bpy.types.Material.msfs_detail_occlusion_metallic_roughness_texture = (
         bpy.props.PointerProperty(
-            name="Detail Occlusion Metallic Roughness Texture",
+            name="Detalhe oclusão textura de rugosidade metálica",
             type=bpy.types.Image,
             update=MSFS_Material_Property_Update.update_detail_comp_texture,
         )
     )
 
     bpy.types.Material.msfs_detail_normal_texture = bpy.props.PointerProperty(
-        name="Detail Normal Texture",
+        name="Detalhe a textura normal",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_detail_normal_texture,
     )
