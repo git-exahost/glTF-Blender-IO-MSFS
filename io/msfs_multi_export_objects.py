@@ -36,7 +36,7 @@ class MultiExporterLODGroup(bpy.types.PropertyGroup):
     lods: bpy.props.CollectionProperty(type=MultiExporterLOD)
     folder_name: bpy.props.StringProperty(name="", default="", subtype="DIR_PATH")
     generate_xml: bpy.props.BoolProperty(name="", default=False)
-    overwrite_guid: bpy.props.BoolProperty(name="", description="If an XML file already exists in the location to export to, the GUID will be overwritten", default=False)
+    overwrite_guid: bpy.props.BoolProperty(name="", description="Se já existir um arquivo XML no local para exportar, o GUID será substituído", default=False)
 
 
 class MSFS_LODGroupUtility:
@@ -75,7 +75,7 @@ class MSFS_LODGroupUtility:
 
 class MSFS_OT_ReloadLODGroups(bpy.types.Operator):
     bl_idname = "msfs.reload_lod_groups"
-    bl_label = "Reload LOD groups"
+    bl_label = "Recarregue os grupos do LODs"
 
     @staticmethod
     def update_grouped_by(self, context):
@@ -197,7 +197,7 @@ class MSFS_PT_MultiExporterObjectsView(bpy.types.Panel):
     def draw(self, context):
         layout = self.layout
 
-        layout.operator(MSFS_OT_ReloadLODGroups.bl_idname, text="Reload LODs")
+        layout.operator(MSFS_OT_ReloadLODGroups.bl_idname, text="Recarregar LODs")
         layout.prop(context.scene, "multi_exporter_show_hidden_objects")
         layout.prop(context.scene, "multi_exporter_grouped_by_collections")
 
@@ -214,7 +214,7 @@ class MSFS_PT_MultiExporterObjectsView(bpy.types.Panel):
 
         if total_lods == 0:
             box = layout.box()
-            box.label(text="No LODs found in scene")
+            box.label(text="Nenhum LOD encontrado em cena")
         else:
             for lod_group in lod_groups:
                 if (
@@ -238,11 +238,11 @@ class MSFS_PT_MultiExporterObjectsView(bpy.types.Panel):
                         emboss=False,
                     )
                     if lod_group.expanded:
-                        box.prop(lod_group, "generate_xml", text="Generate XML")
+                        box.prop(lod_group, "generate_xml", text="Gerar xml")
                         if lod_group.generate_xml:
-                            box.prop(lod_group, "overwrite_guid", text="Overwrite GUID")
+                            box.prop(lod_group, "overwrite_guid", text="Substituir o Guid")
 
-                        box.prop(lod_group, "folder_name", text="Folder")
+                        box.prop(lod_group, "folder_name", text="Pasta")
 
                         col = box.column()
                         for lod in lod_group.lods:
@@ -255,10 +255,10 @@ class MSFS_PT_MultiExporterObjectsView(bpy.types.Panel):
                             else:
                                 row.prop(lod, "enabled", text=lod.object.name)
                             subrow = row.column()
-                            subrow.prop(lod, "lod_value", text="LOD Value")
-                            # subrow.prop(lod, "flatten_on_export", text="Flatten on Export") # Disable these two options for now as there's not a great way to implement them
+                            subrow.prop(lod, "lod_value", text="Valor LOD")
+                            # subrow.prop(lod, "flatten_on_export", text="Flatten on Export") # Desative essas duas opções por enquanto, pois não há uma ótima maneira de implementá -las
                             # subrow.prop(lod, "keep_instances", text="Keep Instances")
-                            subrow.prop(lod, "file_name", text="File Name")
+                            subrow.prop(lod, "file_name", text="Nome do arquivo")
 
         row = layout.row(align=True)
         row.operator(MSFS_OT_MultiExportGLTF2.bl_idname, text="Export")
@@ -269,10 +269,10 @@ def register():
         type=MultiExporterLODGroup
     )
     bpy.types.Scene.multi_exporter_show_hidden_objects = bpy.props.BoolProperty(
-        name="Show hidden objects", default=True
+        name="Exibir objetos ocultos", default=True
     )
     bpy.types.Scene.multi_exporter_grouped_by_collections = bpy.props.BoolProperty(
-        name="Grouped by collections",
+        name="Agrupado por coleções",
         default=False,
         update=MSFS_OT_ReloadLODGroups.update_grouped_by,
     )

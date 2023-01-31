@@ -57,7 +57,7 @@ class AsoboMaterialCommon:
     )
     bpy.types.Material.msfs_base_color_factor = bpy.props.FloatVectorProperty(
         name="Base Color",
-        description="Os componentes RGBA da cor base do material.O quarto componente (a) é a cobertura alfa do material.A propriedade Alphamode especifica como o alfa é interpretado.Esses valores são lineares.Se uma parte do Basecolor Texture for especificada, esse valor será multiplicado com os valores do Texel",
+        description="Os componentes RGBA da cor base do material. O quarto componente (a) é a cobertura alfa do material. A propriedade Alphamode especifica como o alfa é interpretado.Esses valores são lineares.Se uma parte do Basecolor Texture for especificada, esse valor será multiplicado com os valores do Texel",
         subtype="COLOR",
         min=0.0,
         max=1.0,

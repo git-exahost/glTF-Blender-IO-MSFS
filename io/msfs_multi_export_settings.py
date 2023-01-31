@@ -46,7 +46,7 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
    
     ## Asobo Unique ID Check
     use_unique_id: bpy.props.BoolProperty(
-        name='Use Asbob_unique_id Extension',
+        name='Use a extensão de identificação única do ASOBO',
         description='Use a extensão de identificação exclusiva do ASOBO',
         default=True
     )
@@ -72,11 +72,11 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     )
     
     ## Export Custom Propreties Check
-    export_extras: bpy.props.BoolProperty(
-        name="Propriedades personalizadas [Defeito]",
-        description="Exportar propriedades personalizadas como extras GLTF",
-        default=False,
-    )
+    #export_extras: bpy.props.BoolProperty(
+    #    name="Propriedades personalizadas [Defeito]",
+    #    description="Exportar propriedades personalizadas como extras GLTF",
+    #    default=False,
+    #)
     
     ## Export Camera Check
     export_cameras: bpy.props.BoolProperty(
@@ -119,13 +119,13 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     )
 
     ## Export tangents Check
-    export_tangents: bpy.props.BoolProperty(
-        name="Tangents [Não usar]", description="Não funciona no MSFS, gerra erro de tangentes...", default=False
-    )
+    # export_tangents: bpy.props.BoolProperty(
+    #     name="Tangents [Não usar]", description="Não funciona no MSFS, gerra erro de tangentes...", default=False
+    # )
 
     ## Export Vertex Colors Check
     export_colors: bpy.props.BoolProperty(
-        name="Vertex Colors",
+        name="Cores de vértices",
         description="Exportar cores de vértices com malhas.",
         default=True,
     )
@@ -181,7 +181,7 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
                 "JPEG",
                 "JPEG Format (.jpg)",
                 "Salve imagens como jpegs. (Imagens que precisam de alfa são salvas como PNGs.) "
-                "Be aware of a possible loss in quality",
+                "Esteja ciente de uma possível perda de qualidade",
             ),
             ("NONE", "None", "Don't export images"),
         ),
@@ -271,7 +271,7 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     )
 
     export_displacement: bpy.props.BoolProperty(
-        name="Displacement Textures (EXPERIMENTAL)",
+        name="Texturas de deslocamento (EXPERIMENTAL)",
         description="EXPERIMENTAL: Export displacement textures. "
         'Uses incomplete "KHR_materials_displacement" glTF extension',
         default=False,
