@@ -18,8 +18,7 @@ Para instalar o plugin do Blender, siga estes passos simples:
 Esta versão 1.3.x é compatível com o **Blender 3.3.x** e inferior. Isso não funcionará com o Blender 3.4 e superior.
 
 1. Feche o Blender;<br>
-2. Baixe o arquivo **glTF-Blender-IO-MSFS** clicando em **Releases** em seguida clicando em **glTF-Blender-IO-MSFS.zip
-**;
+2. Baixe o arquivo **glTF-Blender-IO-MSFS** clicando em **Releases** em seguida clicando em **glTF-Blender-IO-MSFS.zip**;
 3. Descompact o Zip baixado na pasta **%AppData%\Blender Foundation\Blender\3.3\scripts\addons**  ;
 
   Depois de concluir o processo descrito acima, você precisará iniciar o Blender e, em seguida, ativar o plugin. A ativação é feita a partir das Preferências do Blender.
