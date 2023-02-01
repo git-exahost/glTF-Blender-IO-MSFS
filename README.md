@@ -2,7 +2,7 @@
 
 Este repositório contém uma versão modificada do Microsoft Flight Simulator Blender Import/Export, baseada na versão 1.3.0 do plugin oficial da Asobo, com algumas pequenas modificações.
 
-Em MSFS Material Params agora é possicel adicionar valores acima de 1 em Emissive Color, podendo ir no item V até 1000.0 gerando o Bloom na iluminação.
+Em MSFS Material Params agora é possível adicionar valores acima de 1 em **Emissive Color**, podendo ir no item **V** de **0** até **1000.0**. Valores acima de **1** já geram Bloom visível na iluminação.
 
 #### Importante
 Para que este recuso funcione é necessário atualizar o plugin **glTF 2.0 format** utilizando o link abaixo:<br>
@@ -10,7 +10,7 @@ https://github.com/git-exahost/io_scene_gltf2
 
 #### Para instalar o plugin do Blender, siga estes passos simples:
 
-Esta versão 1.3.x é compatível com o **Blender 3.3.3**. Até o momento esta versão não funciona em outros versões do Blender, então instale o Blender 3.3.3 utilizando o link abaixo:<br>
+Esta versão é compatível com o **Blender 3.3.3**, o mesmo vem apresentando erros em outras versões do Blender, então para seu correto funcionamento, instale o **Blender 3.3.3** utilizando o link abaixo:<br>
 https://www.blender.org/download/releases/3-3/
 
 ### Instalação
