@@ -231,9 +231,9 @@ class MSFSCollisionAddMenu(bpy.types.Menu):
     bl_label = "Flight Simulator Collision"
 
     def draw(self, context):
-        self.layout.operator(AddGizmo.bl_idname, text="Sphere Collision", icon="MESH_UVSPHERE").msfs_gizmo_type = "sphere"
-        self.layout.operator(AddGizmo.bl_idname, text="Box Collision", icon="MESH_CUBE").msfs_gizmo_type = "box"
-        self.layout.operator(AddGizmo.bl_idname, text="Cylinder Collision", icon="MESH_CYLINDER").msfs_gizmo_type = "cylinder"
+        self.layout.operator(AddGizmo.bl_idname, text="Colisão da esfera", icon="MESH_UVSPHERE").msfs_gizmo_type = "sphere"
+        self.layout.operator(AddGizmo.bl_idname, text="Colisão da caixa", icon="MESH_CUBE").msfs_gizmo_type = "box"
+        self.layout.operator(AddGizmo.bl_idname, text="Colisão do cilindro", icon="MESH_CYLINDER").msfs_gizmo_type = "cylinder"
 
 def draw_menu(self, context):
     self.layout.menu(menu=MSFSCollisionAddMenu.bl_idname, icon="SHADING_BBOX")

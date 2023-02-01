@@ -72,11 +72,11 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     )
     
     ## Export Custom Propreties Check
-    #export_extras: bpy.props.BoolProperty(
-    #    name="Propriedades personalizadas [Defeito]",
-    #    description="Exportar propriedades personalizadas como extras GLTF",
-    #    default=False,
-    #)
+    export_extras: bpy.props.BoolProperty(
+        name="Propriedades personalizadas [Defeito]",
+        description="Exportar propriedades personalizadas como extras GLTF",
+        default=False,
+    )
     
     ## Export Camera Check
     export_cameras: bpy.props.BoolProperty(
@@ -119,9 +119,10 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     )
 
     ## Export tangents Check
-    # export_tangents: bpy.props.BoolProperty(
-    #     name="Tangents [Não usar]", description="Não funciona no MSFS, gerra erro de tangentes...", default=False
-    # )
+    export_tangents: bpy.props.BoolProperty(
+        name="Tangents [Não usar]", description="Não funciona no MSFS, gerra erro de tangentes...", 
+        default=False
+    )
 
     ## Export Vertex Colors Check
     export_colors: bpy.props.BoolProperty(
@@ -329,7 +330,7 @@ class MSFS_PT_export_include(bpy.types.Panel):
         col.prop(settings, "use_active_collection")
 
         col = layout.column(heading="Data", align=True)
-        col.prop(settings, "export_extras")
+        #col.prop(settings, "export_extras")
         col.prop(settings, "export_cameras")
         col.prop(settings, "export_lights")
  
@@ -378,7 +379,7 @@ class MSFS_PT_export_geometry(bpy.types.Panel):
         layout.prop(settings, "export_normals")
         col = layout.column()
         col.active = settings.export_normals
-        col.prop(settings, "export_tangents")
+        #col.prop(settings, "export_tangents")
         layout.prop(settings, "export_colors")
 
         col = layout.column()
