@@ -11,11 +11,12 @@ Para que este recuso funcione é necessário atualizar o plugin **glTF 2.0 forma
 https://github.com/git-exahost/io_scene_gltf2
 
 
-### Instalação
-
 Para instalar o plugin do Blender, siga estes passos simples:
 
-Esta versão 1.3.x é compatível com o **Blender 3.3.3**. Até o momento esta versão não funciona em outros versões do Blender.
+Esta versão 1.3.x é compatível com o **Blender 3.3.3**. Até o momento esta versão não funciona em outros versões do Blender, então instale o Blender 3.3.3 utilizando o link abaixo:
+https://www.blender.org/download/releases/3-3/
+
+### Instalação
 
 1. Feche o Blender;<br>
 2. Baixe o arquivo **glTF-Blender-IO-MSFS** clicando em **Releases** em seguida clicando em **glTF-Blender-IO-MSFS.zip**;
