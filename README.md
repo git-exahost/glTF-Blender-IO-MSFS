@@ -21,6 +21,6 @@ Esta versão 1.3.x é compatível com o **Blender 3.3.x** e inferior. Isso não 
 2. Baixe o arquivo **glTF-Blender-IO-MSFS** clicando em **Releases** em seguida clicando em **glTF-Blender-IO-MSFS.zip**;
 3. Descompact o Zip baixado na pasta **%AppData%\Blender Foundation\Blender\3.3\scripts\addons**  ;
 
-  Depois de concluir o processo descrito acima, você precisará iniciar o Blender e, em seguida, ativar o plugin. A ativação é feita a partir das Preferências do Blender.
+  Depois de concluir o processo descrito acima, inicie o Blender e, em seguida, ative o plugin. A ativação é feita a partir das Preferências do Blender.
 
 **NOTA**: Talvez seja necessário reiniciar o Blender novamente depois de ativar o plug-in para que todas as opções fiquem visíveis no IDE.
