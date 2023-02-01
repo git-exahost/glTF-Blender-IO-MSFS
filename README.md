@@ -15,7 +15,7 @@ https://github.com/git-exahost/io_scene_gltf2
 
 Para instalar o plugin do Blender, siga estes passos simples:
 
-Esta versão 1.3.x é compatível com o **Blender 3.3.x** e inferior. Isso não funcionará com o Blender 3.4 e superior.
+Esta versão 1.3.x é compatível com o **Blender 3.3.3**. Até o momento esta versão não funciona em outros versões do Blender.
 
 1. Feche o Blender;<br>
 2. Baixe o arquivo **glTF-Blender-IO-MSFS** clicando em **Releases** em seguida clicando em **glTF-Blender-IO-MSFS.zip**;
