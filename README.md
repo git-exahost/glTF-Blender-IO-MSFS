@@ -8,7 +8,7 @@ Em MSFS Material Params agora é possicel adicionar valores acima de 1 em Emissi
 Para que este recuso funcione é necessário atualizar o plugin **glTF 2.0 format** utilizando o link abaixo:<br>
 https://github.com/git-exahost/io_scene_gltf2
 
-Para instalar o plugin do Blender, siga estes passos simples:
+#### Para instalar o plugin do Blender, siga estes passos simples:
 
 Esta versão 1.3.x é compatível com o **Blender 3.3.3**. Até o momento esta versão não funciona em outros versões do Blender, então instale o Blender 3.3.3 utilizando o link abaixo:<br>
 https://www.blender.org/download/releases/3-3/
