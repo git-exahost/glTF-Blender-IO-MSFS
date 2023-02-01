@@ -2,7 +2,7 @@
 
 Este repositório contém uma versão modificada do Microsoft Flight Simulator Blender Import/Export.
 
-Esta versão baseada na versão 1.3.0 do plugin oficial da Asobo com algumas pequenas modificações
+Esta versão é baseada na versão 1.3.0 do plugin oficial da Asobo com algumas pequenas modificações
 
 Em MSFS Material Params agora é possicel adicionar valores acima de 1 em Emissive Color, podendo ir no item V até 1000.0 gerando o Bloom na iluminação.
 
