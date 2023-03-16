@@ -71,7 +71,7 @@ class AsoboMaterialCommon:
         description="Os componentes RGB da cor emissiva do material. Esses valores são lineares.Se uma emissive textura for especificada, esse valor será multiplicado com os valores do Texel",
         subtype="COLOR",
         min=0.0,
-        max=1000.0,
+        max=1.0,
         size=3,
         default=Defaults.EmissiveFactor,
         update=MSFS_Material_Property_Update.update_emissive_color,
