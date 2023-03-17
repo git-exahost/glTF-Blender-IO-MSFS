@@ -7,7 +7,7 @@ https://github.com/AsoboStudio/glTF-Blender-IO-MSFS
 
 Este plugin desbloqueia o recurso **Emissive Color** resposável por gerar Light Bloom ou Glow ao qual reproduz os efeitos de iluminação do mundo real. O efeito bloom funciona aplicando um filtro na imagem que aumenta o brilho das partes mais claras e cria um borrão nas bordas. Isso faz com que a luz pareça mais intensa e difusa, como acontece na vida real quando olhamos para uma fonte de luz muito forte
 
-# Como utilizar o efeito Bloom ao gear o gLTF para a SDK
+#### Como utilizar o efeito Bloom ao gear o gLTF para a SDK
 
 Em "MSFS Material Params" como na imagem abaixo, selecione "Emissive Color" e aumente seu valor para 1, esse é o valor máximo de emissão, observe que agora o objeto passa a emitir a iluminação brilhando no escuro, mas ele ainda não emite o Bloom.
 
