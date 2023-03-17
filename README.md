@@ -9,16 +9,16 @@ Este plugin desbloqueia o recurso **Emissive Color** responsável por gerar Ligh
 
 #### Como utilizar o efeito Bloom ao gear o gLTF para a SDK
 
-Em "MSFS Material Params", como na imagem abaixo, selecione "Emissive Color" e aumente seu valor para 1. Este é o valor máximo de emissão. Observe que agora o objeto passa a emitir a iluminação brilhando no escuro, mas ele ainda não emite o Bloom.
+Em **MSFS Material Params**, como na imagem abaixo, selecione **Emissive Color** e aumente seu valor para **1**. Este é o valor máximo de emissão. Observe que agora o objeto passa a emitir a iluminação brilhando no escuro, mas ele ainda não emite o Bloom.
 
 ![MSFS Material Params](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/MSFSMaterialParams.jpg)
 
 
-Para adicionar o efeito Bloom, procure por "Emission Strength" nos parâmetros de superfície, clique em cima e procure por "vincular". Em seguida, clique em "desconectar". Veja que agora é possível adicionar valores ao "Emission Strength", como demonstrado na imagem abaixo. Os valores adicionados a este item geram o efeito Bloom. Fique à vontade para testar diversos valores.
+Para adicionar o efeito Bloom, procure por **Emission Strength** nos parâmetros de superfície, clique em cima e procure por **vincular**. Em seguida, clique em **desconectar**. Veja que agora é possível adicionar valores ao **Emission Strength**, como demonstrado na imagem abaixo. Os valores adicionados a este item geram o efeito Bloom. Fique à vontade para testar diversos valores.
 
 ![Emission Strengths](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/EmissionStrength.jpg)
 
-Para ver o resultado do efeito Bloom no Blender sem ter que compilar e gerar o glTF, vá em "Render Properties" e marque o item "Reluzir", como na imagem abaixo:
+Para ver o resultado do efeito Bloom no Blender sem ter que compilar e gerar o glTF, vá em **Render Properties** e marque o item **Reluzir**, como na imagem abaixo:
 
 ![Reluzir](https://raw.githubusercontent.com/git-exahost/glTF-Blender-IO-MSFS/main/misc/Reluzir.jpg) 
 
