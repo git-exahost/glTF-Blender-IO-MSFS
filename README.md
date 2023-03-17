@@ -11,11 +11,12 @@ Este plugin desbloqueia o recurso **Emissive Color** resposável por gerar Light
 
 Em "MSFS Material Params" como na imagem abaixo, selecione "Emissive Color" e aumente seu valor para 1, esse é o valor máximo de emissão, observe que agora o objeto passa a emitir a iluminação brilhando no escuro, mas ele ainda não emite o Bloom.
 
-![Emission Strengths](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/EmissionStrength.jpg)
+![MSFS Material Params](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/MSFSMaterialParams.jpg)
+
 
 Para adicionar o efeito Bloom, procure por "Emission Strength" nos parametores de superficie, clique em cima e procure por "vincular", clique em "desconectar" veja que agora é possível adicionar valores ao "Emission Strength" como demostrado na imagem abaixo, os valores adicionados a este item geram o efeito Bloom, fique a vontade para testar diversos valores.
 
-![MSFS Material Params](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/MSFSMaterialParams.jpg)
+![Emission Strengths](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/EmissionStrength.jpg)
 
 Para ver o resultado do efeito Bloom no blender sem ter que compilar e gerar o gLTF, va em "Pender Propiets" e marque o item "Reluzir" como na imagem abaixo:
 
