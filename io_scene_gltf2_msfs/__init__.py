@@ -23,7 +23,7 @@ bl_info = {
     "author": "Luca Pierabella, Wing42, pepperoni505, ronh991, tml1024, Sérgio Rocha and others",
     "description": "Este kit de ferramentas prepara seus ativos 3D para serem usados para o Microsoft Flight Simulator",
     "blender": (3, 1, 0),
-    "version": (1,3,1,2),
+    "version": (1,3,1,3),
     "location": "File > Import-Export",
     "category": "Import-Export",
     "tracker_url": "https://github.com/git-exahost/glTF-Blender-IO-MSFS"

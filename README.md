@@ -20,7 +20,7 @@ Para adicionar o efeito Bloom, procure por "Emission Strength" nos parâmetros d
 
 Para ver o resultado do efeito Bloom no Blender sem ter que compilar e gerar o glTF, vá em "Render Properties" e marque o item "Reluzir", como na imagem abaixo:
 
-![Reluzir](https://raw.githubusercontent.com/git-exahost/glTF-Blender-IO-MSFS/main/misc/Reluzir.jpg)
+![Reluzir](https://raw.githubusercontent.com/git-exahost/glTF-Blender-IO-MSFS/main/misc/Reluzir.jpg) 
 
 #### Para instalar o plugin do Blender, siga estes passos simples:
 
