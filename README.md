@@ -31,7 +31,7 @@ https://www.blender.org/download/releases/3-4/
 
 1. Feche o Blender;<br>
 2. Baixe o arquivo **glTF-Blender-IO-MSFS** clicando em **Releases** em seguida clicando em **glTF-Blender-IO-MSFS.zip**;
-3. Descompact o Zip baixado na pasta **C:\Users\seu usuario\AppData\Roaming\Blender Foundation\Blender\3.0\scripts\addons** ou globalmente em **C:\Program Files\Blender Foundation\Blender 3.3\3.3\scripts\addons**; pode subistituir todos os arquivos do  **io_scene_gltf2**.
+3. Descompact o Zip baixado na pasta **C:\Users\seu usuario\AppData\Roaming\Blender Foundation\Blender\3.4\scripts\addons** ou globalmente em **C:\Program Files\Blender Foundation\Blender 3.4\3.4\scripts\addons**; pode subistituir todos os arquivos do  **io_scene_gltf2**.
 
   Depois de concluir o processo descrito acima, inicie o Blender e, em seguida, ative o plugin. A ativação é feita a partir das Preferências do Blender.
 
