@@ -13,7 +13,6 @@ Em **MSFS Material Params**, como na imagem abaixo, selecione **Emissive Color**
 
 ![MSFS Material Params](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/MSFSMaterialParams.jpg)
 
-
 Para adicionar o efeito Bloom, procure por **Emission Strength** nos parâmetros de superfície, clique em cima e procure por **vincular**. Em seguida, clique em **desconectar**. Veja que agora é possível adicionar valores ao **Emission Strength**, como demonstrado na imagem abaixo. Os valores adicionados a este item geram o efeito Bloom. Fique à vontade para testar diversos valores.
 
 ![Emission Strengths](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/EmissionStrength.jpg)
@@ -24,8 +23,8 @@ Para ver o resultado do efeito Bloom no Blender sem ter que compilar e gerar o g
 
 #### Para instalar o plugin do Blender, siga estes passos simples:
 
-Esta versão é compatível com o **Blender 3.4**. Instale o **Blender 3.4** utilizando o link abaixo:<br>
-https://www.blender.org/download/releases/3-4/
+Esta versão é compatível com o **Blender 3.5**. Instale o **Blender 3.5** utilizando o link abaixo:<br>
+https://www.blender.org/download/releases/3-5/
 
 ### Instalaçãos
 
