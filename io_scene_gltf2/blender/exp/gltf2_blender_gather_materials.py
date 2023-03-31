@@ -62,13 +62,13 @@ def gather_material(blender_material, active_uvmap_index, export_settings):
     if any([i>1.0 for i in emissive_factor or []]) is True:
         # Strength is set on extension
         emission_strength = max(emissive_factor)
-        #emissive_factor = [f / emission_strength for f in emissive_factor]
+        # emissive_factor = [f / emission_strength for f in emissive_factor]
 
 
     base_material = gltf2_io.Material(
         alpha_cutoff=__gather_alpha_cutoff(blender_material, export_settings),
         alpha_mode=__gather_alpha_mode(blender_material, export_settings),
-        double_sided=__gather_double_sided(blender_material, export_settings),
+        double_sided=__gather_double_sided(blender_material, extensions, export_settings),
         emissive_factor=emissive_factor,
         emissive_texture=emissive_texture,
         extensions=extensions,
@@ -196,7 +196,12 @@ def __gather_alpha_mode(blender_material, export_settings):
     return None
 
 
-def __gather_double_sided(blender_material, export_settings):
+def __gather_double_sided(blender_material, extensions, export_settings):
+
+    # If user create a volume extension, we force double sided to False
+    if 'KHR_materials_volume' in extensions:
+        return False
+
     if not blender_material.use_backface_culling:
         return True
 
@@ -256,7 +261,7 @@ def __gather_extensions(blender_material, emissive_factor, export_settings):
     sheen_extension, use_actives_uvmap_sheen = export_sheen(blender_material, export_settings)
     if sheen_extension:
         extensions["KHR_materials_sheen"] = sheen_extension
-        actives_uvmaps.extend(use_actives_uvmap_sheen)   
+        actives_uvmaps.extend(use_actives_uvmap_sheen)
 
     # KHR_materials_ior
     # Keep this extension at the end, because we export it only if some others are exported
@@ -358,7 +363,7 @@ def __export_unlit(blender_material, active_uvmap_index, export_settings):
     base_material = gltf2_io.Material(
         alpha_cutoff=__gather_alpha_cutoff(blender_material, export_settings),
         alpha_mode=__gather_alpha_mode(blender_material, export_settings),
-        double_sided=__gather_double_sided(blender_material, export_settings),
+        double_sided=__gather_double_sided(blender_material, {}, export_settings),
         extensions={"KHR_materials_unlit": Extension("KHR_materials_unlit", {}, required=False)},
         extras=__gather_extras(blender_material, export_settings),
         name=__gather_name(blender_material, export_settings),
