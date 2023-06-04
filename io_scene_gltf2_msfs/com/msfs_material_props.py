@@ -28,28 +28,28 @@ class AsoboMaterialCommon:
         EmissiveScale = 1.0
         AlphaMode = "OPAQUE"
         AlphaCutoff = 0.5
-        DoubleSided = False
+        DoubleSided = False 
 
     bpy.types.Material.msfs_material_type = bpy.props.EnumProperty(
         name="Type",
         items=(
-            ("NONE", "Desabilitado", ""),
-            ("msfs_standard", "Padrão", ""),
-            ("msfs_geo_decal", "Decalque", ""),
+            ("NONE", "Disabled", ""),
+            ("msfs_standard", "Standard", ""),
+            ("msfs_geo_decal", "Decal", ""),
             ("msfs_geo_decal_frosted", "Geo Decal Frosted", ""),
-            ("msfs_windshield", "Parabrisa", ""),
-            ("msfs_porthole", "Escotilha", ""),
-            ("msfs_glass", "Vidro", ""),
+            ("msfs_windshield", "Windshield", ""),
+            ("msfs_porthole", "Porthole", ""),
+            ("msfs_glass", "Glass", ""),
             ("msfs_clearcoat", "Clearcoat", ""),
             ("msfs_parallax", "Parallax", ""),
             ("msfs_anisotropic", "Anisotropic", ""),
-            ("msfs_hair", "Cabelo", ""),
-            ("msfs_sss", "Sub-surface Espalhamento", ""),
-            ("msfs_invisible", "Invisível", ""),
-            ("msfs_fake_terrain", "Terreno falso", ""),
+            ("msfs_hair", "Hair", ""),
+            ("msfs_sss", "Sub-surface Scattering", ""),
+            ("msfs_invisible", "Invisible", ""),
+            ("msfs_fake_terrain", "Fake Terrain", ""),
             ("msfs_fresnel_fade", "Fresnel Fade", ""),
-            ("msfs_environment_occluder", "Oclusão de ambiente", ""),
-            ("msfs_ghost", "Fantasma", ""),
+            ("msfs_environment_occluder", "Environment Occluder", ""),
+            ("msfs_ghost", "Ghost", ""),
         ),
         default="NONE",
         update=MSFS_Material_Property_Update.update_msfs_material_type,
@@ -78,7 +78,7 @@ class AsoboMaterialCommon:
         options={"ANIMATABLE"},
     )
     bpy.types.Material.msfs_metallic_factor = bpy.props.FloatProperty(
-        name="Fator metálico",
+        name="Metallic Factor",
         description="A metalness do material. Um valor de 1,0 significa que o material é um metal. Um valor de 0,0 significa que o material é um dielétrico. Os valores intermediários são para a mistura entre metais e dielétricos, como superfícies metálicas sujas.Este valor é linear.Se uma textura de metalicração for especificada, esse valor é multiplicado com os valores metálicos do Texel",
         min=0.0,
         max=1.0,
@@ -87,7 +87,7 @@ class AsoboMaterialCommon:
         options={"ANIMATABLE"},
     )
     bpy.types.Material.msfs_roughness_factor = bpy.props.FloatProperty(
-        name="Fator de rugosidade",
+        name="Roughness Factor",
         description="A rugosidade do material.Um valor de 1,0 significa que o material é completamente difícil.Um valor de 0,0 significa que o material é completamente suave.Este valor é linear.Se uma textura de metálica é especificada, esse valor é multiplicado com os valores da rugosidade Texel",
         min=0.0,
         max=1.0,
@@ -96,7 +96,7 @@ class AsoboMaterialCommon:
         options={"ANIMATABLE"},
     )
     bpy.types.Material.msfs_normal_scale = bpy.props.FloatProperty(
-        name="Escala normal",
+        name="Normal Scale",
         description="O multiplicador escalar aplicado a cada vetor normal da textura.Este valor é ignorado se a textura normal não for especificada",
         min=0.0,
         max=1.0,
@@ -105,7 +105,7 @@ class AsoboMaterialCommon:
         options=set(),
     )
     bpy.types.Material.msfs_emissive_scale = bpy.props.FloatProperty(
-        name="Escala emissiva",
+        name="Emissive Scale",
         description="A rugosidade do material.Um valor de 1,0 significa que o material é completamente difícil.Um valor de 0,0 significa que o material é completamente suave.Este valor é linear.Se uma textura de metálica for especificada, esse valor será multiplicado com os valores de rugosidade do Texel.",
         min=0.0,
         max=1.0,
@@ -142,7 +142,7 @@ class AsoboMaterialCommon:
         options=set(),
     )
     bpy.types.Material.msfs_alpha_cutoff = bpy.props.FloatProperty(
-        name="Corte alfa",
+        name="Alpha Cutoff",
         description="Quando o Alphamode é definido para mascarar a propriedade Alphacutoff especifica o limite de corte.Se o valor alfa for maior ou igual ao valor do Alphacutoff, será renderizado como totalmente opaco; caso contrário, será renderizado como totalmente transparente.O valor do Alphacutoff é ignorado para outros modos",
         min=0.0,
         max=1.0,
@@ -151,7 +151,7 @@ class AsoboMaterialCommon:
         options=set(),
     )
     bpy.types.Material.msfs_double_sided = bpy.props.BoolProperty(
-        name="Dupla face",
+        name="Double Sided",
         description="A propriedade dupla especifica se o material é dupla face.Quando esse valor é falso, o abate de face traseira está ativado.Quando esse valor é verdadeiro, o abate de face traseira é desativado e a iluminação de dupla face está ativada.A face traseira deve ter seus normais revertidos antes que a equação de iluminação seja avaliada",
         default=Defaults.DoubleSided,
         update=MSFS_Material_Property_Update.update_double_sided,
@@ -160,30 +160,30 @@ class AsoboMaterialCommon:
 
     # Textures (reused across material types, but named different)
     bpy.types.Material.msfs_base_color_texture = bpy.props.PointerProperty(
-        name="Textura da cor base",
+        name="Base Color Texture",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_base_color_texture,
     )
     bpy.types.Material.msfs_occlusion_metallic_roughness_texture = (
         bpy.props.PointerProperty(
-            name="Textura de rugosidade metálica de oclusão",
+            name="Occlusion Metallic Roughness Texture",
             type=bpy.types.Image,
             update=MSFS_Material_Property_Update.update_comp_texture,
         )
     )
 
     bpy.types.Material.msfs_normal_texture = bpy.props.PointerProperty(
-        name="Textura normal",
+        name="Normal Texture",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_normal_texture,
     )
     bpy.types.Material.msfs_blend_mask_texture = bpy.props.PointerProperty(
-        name="Misture a textura da máscara",
+        name="Blend Mask Texture",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_blend_mask_texture,
     )
     bpy.types.Material.msfs_dirt_texture = bpy.props.PointerProperty(
-        name="Textura de sujeira",
+        name="Dirt Texture",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_dirt_texture,
     )
@@ -194,28 +194,28 @@ class AsoboMaterialCommon:
         update=MSFS_Material_Property_Update.update_extra_slot1_texture,
     )
     bpy.types.Material.msfs_opacity_texture = bpy.props.PointerProperty(
-        name="Textura da opacidade", type=bpy.types.Image
+        name="Opacity Texture", type=bpy.types.Image
     )
     bpy.types.Material.msfs_emissive_texture = bpy.props.PointerProperty(
-        name="Textura emissiva",
+        name="Emissive Texture",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_emissive_texture,
     )
     bpy.types.Material.msfs_detail_color_texture = bpy.props.PointerProperty(
-        name="Detalhe a textura da cor",
+        name="Detail Color Texture",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_detail_color_texture,
     )
     bpy.types.Material.msfs_detail_occlusion_metallic_roughness_texture = (
         bpy.props.PointerProperty(
-            name="Detalhe oclusão textura de rugosidade metálica",
+            name="Detail Occlusion Metallic Roughness Texture",
             type=bpy.types.Image,
             update=MSFS_Material_Property_Update.update_detail_comp_texture,
         )
     )
 
     bpy.types.Material.msfs_detail_normal_texture = bpy.props.PointerProperty(
-        name="Detalhe a textura normal",
+        name="Detail Normal Texture",
         type=bpy.types.Image,
         update=MSFS_Material_Property_Update.update_detail_normal_texture,
     )
@@ -470,7 +470,7 @@ class AsoboMaterialDrawOrder:
         drawOrderOffset = 0
 
     bpy.types.Material.msfs_draw_order_offset = bpy.props.IntProperty(
-        name="Desenhar o deslocamento da ordem",
+        name="Draw Order Offset",
         description="Desenhar o deslocamento da ordem, para classificar os decalques manualmente, desenhe a ordem, por exemplo",
         min=-999,
         max=999,
@@ -517,7 +517,7 @@ class AsoboDayNightCycle:
     SerializedName = "ASOBO_material_day_night_switch"
 
     bpy.types.Material.msfs_day_night_cycle = bpy.props.BoolProperty(
-        name="Ciclo noite/dia",
+        name="Day Night Cycle",
         description="O emissivo estará relacionado ao ciclo da noite do dia do jogo. Quando esse valor é falso, o emissivo está sempre ligado",
         default=False,
         options=set(),
@@ -552,7 +552,7 @@ class AsoboDisableMotionBlur:
     SerializedName = "ASOBO_material_disable_motion_blur"
 
     bpy.types.Material.msfs_disable_motion_blur = bpy.props.BoolProperty(
-        name="Desativar Motion Blur",
+        name="Disable Motion Blur",
         description="Quando esse valor está ligado, o MotionBlur está desativado no material, independentemente do que seja definido em opções gráficas",
         default=False,
         options=set(),
