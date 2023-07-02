@@ -4,24 +4,25 @@
 from copy import deepcopy
 import bpy
 
-from io_scene_gltf2.blender.exp.gltf2_blender_gather_cache import cached, cached_by_key
-from io_scene_gltf2.io.com import gltf2_io
-from io_scene_gltf2.blender.exp import gltf2_blender_gather_materials_unlit
-from io_scene_gltf2.blender.exp import gltf2_blender_gather_texture_info, gltf2_blender_export_keys
-from io_scene_gltf2.blender.exp import gltf2_blender_gather_materials_pbr_metallic_roughness
-from ..com.gltf2_blender_extras import generate_extras
-from io_scene_gltf2.blender.exp import gltf2_blender_get
-from io_scene_gltf2.io.exp.gltf2_io_user_extensions import export_user_extensions
-from io_scene_gltf2.io.com.gltf2_io_debug import print_console
-from io_scene_gltf2.blender.exp.gltf2_blender_gather_materials_volume import export_volume
-from io_scene_gltf2.blender.exp.gltf2_blender_gather_materials_emission import export_emission_factor, \
+from ....io.com import gltf2_io
+from ....io.com.gltf2_io_extensions import Extension
+from ....io.exp.gltf2_io_user_extensions import export_user_extensions
+from ....io.com.gltf2_io_debug import print_console
+from ...com.gltf2_blender_extras import generate_extras
+from ...exp import gltf2_blender_get
+from ..gltf2_blender_gather_cache import cached, cached_by_key
+from . import gltf2_blender_gather_materials_unlit
+from . import gltf2_blender_gather_texture_info
+from . import gltf2_blender_gather_materials_pbr_metallic_roughness
+from .extensions.gltf2_blender_gather_materials_volume import export_volume
+from .extensions.gltf2_blender_gather_materials_emission import export_emission_factor, \
     export_emission_texture, export_emission_strength_extension
-from io_scene_gltf2.blender.exp.gltf2_blender_gather_materials_sheen import export_sheen
-from io_scene_gltf2.blender.exp.gltf2_blender_gather_materials_specular import export_specular
-from io_scene_gltf2.blender.exp.gltf2_blender_gather_materials_transmission import export_transmission
-from io_scene_gltf2.blender.exp.gltf2_blender_gather_materials_clearcoat import export_clearcoat
-from io_scene_gltf2.blender.exp.gltf2_blender_gather_materials_ior import export_ior
-from io_scene_gltf2.io.com.gltf2_io_extensions import Extension
+from .extensions.gltf2_blender_gather_materials_sheen import export_sheen
+from .extensions.gltf2_blender_gather_materials_specular import export_specular
+from .extensions.gltf2_blender_gather_materials_transmission import export_transmission
+from .extensions.gltf2_blender_gather_materials_clearcoat import export_clearcoat
+from .extensions.gltf2_blender_gather_materials_ior import export_ior
+
 
 @cached
 def get_material_cache_key(blender_material, active_uvmap_index, export_settings):
@@ -179,7 +180,7 @@ def __get_new_material_texture_shared(base, node):
                         __get_new_material_texture_shared(base[i], node[i])
 
 def __filter_material(blender_material, export_settings):
-    return export_settings[gltf2_blender_export_keys.MATERIALS]
+    return export_settings['gltf_materials']
 
 
 def __gather_alpha_cutoff(blender_material, export_settings):

@@ -1,16 +1,16 @@
 # Copyright 2021-2022 The glTF-Blender-IO-MSFS authors.
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# Licenciado sob a licença Apache, versão 2.0 (a "licença");
+# Você não pode usar esse arquivo, exceto em conformidade com a licença.
+# Você pode obter uma cópia da licença em
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+#, A menos que exigido pela lei aplicável ou acordada por escrito, software
+# distribuído sob a licença é distribuído em uma base "como está",
+# Sem garantias ou condições de qualquer tipo, expressas ou implícitas.
+# Veja a licença para o idioma específico que rege as permissões e
+# limitações sob a licença.
 
 import bpy
 import inspect
@@ -21,8 +21,8 @@ from pathlib import Path
 bl_info = {
     'name': 'Microsoft Flight Simulator glTF Extension',
     'author': 'Luca Pierabella, Wing42, pepperoni505, ronh991, tml1024, Sérgio Rocha and others',
-    "version": (1,3,1,4),
-    'blender': (3, 5, 0),
+    "version": (1,3,1,6),
+    'blender': (3, 6, 0),
     'location': 'File > Import-Export',
     'description': 'Kit de ferramentas que prepara seus ativos 3D para serem usados para o Microsoft Flight Simulator',
     'warning': '',

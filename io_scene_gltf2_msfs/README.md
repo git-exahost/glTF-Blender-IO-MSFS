@@ -1,6 +1,6 @@
 ## FlightSim Blender glTF 2.0 Importador e Exportador + Bloom
 
-Este repositório contém uma versão modificada do Microsoft Flight Simulator Blender Import/Export, baseada na versão 1.3.0 do plugin oficial da Asobo, com algumas pequenas modificações.
+Este repositório contém uma versão modificada do Microsoft Flight Simulator Blender Import/Export, baseada na versão 1.3.1 do plugin oficial da Asobo, com algumas pequenas modificações.
 
 Em MSFS Material Params agora é possível adicionar valores acima de 1 em **Emissive Color**, podendo ir no item **V** de **0** até **1000.0**. Valores acima de **1** já geram Bloom visível na iluminação.
 

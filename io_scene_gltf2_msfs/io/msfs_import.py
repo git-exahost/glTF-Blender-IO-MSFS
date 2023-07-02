@@ -15,7 +15,7 @@
 import bpy
 from .msfs_light import MSFSLight
 from .msfs_gizmo import MSFSGizmo
-from .msfs_material import MSFSMaterial
+from .msfs_material import MSFSMaterial 
 
 class Import:
 

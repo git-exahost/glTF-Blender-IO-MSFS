@@ -33,7 +33,7 @@ class AsoboMaterialCommon:
     bpy.types.Material.msfs_material_type = bpy.props.EnumProperty(
         name="Type",
         items=(
-            ("NONE", "Disabled", ""),
+            ("NONE", "Disabled", ""), 
             ("msfs_standard", "Standard", ""),
             ("msfs_geo_decal", "Decal", ""),
             ("msfs_geo_decal_frosted", "Geo Decal Frosted", ""),
