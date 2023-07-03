@@ -21,7 +21,7 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     #### General Options
     ## keep original texture option Check
     export_keep_originals: bpy.props.BoolProperty(
-        name="Mantenha-se original",
+        name="Manter original",
         description=(
             "Mantenha os arquivos de texturas originais, se possível. "
             "Aviso: se você usar mais de uma textura, "
@@ -33,7 +33,7 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     ## Texture directory path
     export_texture_dir: bpy.props.StringProperty(
         name="Texturas",
-        description="Pasta para colocar arquivos de textura em. Em relação ao arquivo .GLTF",
+        description="Pasta para colocar arquivos de textura em. Em relação ao arquivo .gLTF",
         default="",
     )
 
@@ -73,7 +73,7 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     
     ## Export Custom Propreties Check
     export_extras: bpy.props.BoolProperty(
-        name="Propriedades personalizadas [Defeito]",
+        name="Propriedades personalizadas",
         description="Exportar propriedades personalizadas como extras GLTF",
         default=False,
     )
@@ -120,7 +120,7 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
 
     ## Export tangents Check
     export_tangents: bpy.props.BoolProperty(
-        name="Tangents [Não usar]", description="Não funciona no MSFS, gerra erro de tangentes...", 
+        name="Tangents", description="Não funciona no MSFS, gerra erro de tangentes...", 
         default=False
     )
 
@@ -128,7 +128,7 @@ class MSFS_MultiExporterSettings(bpy.types.PropertyGroup):
     export_colors: bpy.props.BoolProperty(
         name="Cores de vértices",
         description="Exportar cores de vértices com malhas.",
-        default=True,
+        default=False,
     )
     
     ## Export Loose Edge Check
@@ -330,7 +330,7 @@ class MSFS_PT_export_include(bpy.types.Panel):
         col.prop(settings, "use_active_collection")
 
         col = layout.column(heading="Data", align=True)
-        #col.prop(settings, "export_extras")
+        col.prop(settings, "export_extras")
         col.prop(settings, "export_cameras")
         col.prop(settings, "export_lights")
  
@@ -379,7 +379,7 @@ class MSFS_PT_export_geometry(bpy.types.Panel):
         layout.prop(settings, "export_normals")
         col = layout.column()
         col.active = settings.export_normals
-        #col.prop(settings, "export_tangents")
+        col.prop(settings, "export_tangents")
         layout.prop(settings, "export_colors")
 
         col = layout.column()

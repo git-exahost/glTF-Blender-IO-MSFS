@@ -28,12 +28,12 @@ class AsoboMaterialCommon:
         EmissiveScale = 1.0
         AlphaMode = "OPAQUE"
         AlphaCutoff = 0.5
-        DoubleSided = False 
+        DoubleSided = False
 
     bpy.types.Material.msfs_material_type = bpy.props.EnumProperty(
         name="Type",
         items=(
-            ("NONE", "Disabled", ""), 
+            ("NONE", "Disabled", ""),
             ("msfs_standard", "Standard", ""),
             ("msfs_geo_decal", "Decal", ""),
             ("msfs_geo_decal_frosted", "Geo Decal Frosted", ""),
@@ -108,7 +108,7 @@ class AsoboMaterialCommon:
         name="Emissive Scale",
         description="A rugosidade do material.Um valor de 1,0 significa que o material é completamente difícil.Um valor de 0,0 significa que o material é completamente suave.Este valor é linear.Se uma textura de metálica for especificada, esse valor será multiplicado com os valores de rugosidade do Texel.",
         min=0.0,
-        max=1.0,
+        max=100.0,
         default=Defaults.EmissiveScale,
         update=MSFS_Material_Property_Update.update_emissive_scale,
         options=set(),
@@ -151,8 +151,8 @@ class AsoboMaterialCommon:
         options=set(),
     )
     bpy.types.Material.msfs_double_sided = bpy.props.BoolProperty(
-        name="Double Sided",
-        description="A propriedade dupla especifica se o material é dupla face.Quando esse valor é falso, o abate de face traseira está ativado.Quando esse valor é verdadeiro, o abate de face traseira é desativado e a iluminação de dupla face está ativada.A face traseira deve ter seus normais revertidos antes que a equação de iluminação seja avaliada",
+        name="Dupla face",
+        description="A propriedade dupla especifica se o material é dupla face. Quando esse valor é falso, o abate de face traseira está ativado.Quando esse valor é verdadeiro, o abate de face traseira é desativado e a iluminação de dupla face está ativada.A face traseira deve ter seus normais revertidos antes que a equação de iluminação seja avaliada",
         default=Defaults.DoubleSided,
         update=MSFS_Material_Property_Update.update_double_sided,
         options=set(),
@@ -517,7 +517,7 @@ class AsoboDayNightCycle:
     SerializedName = "ASOBO_material_day_night_switch"
 
     bpy.types.Material.msfs_day_night_cycle = bpy.props.BoolProperty(
-        name="Day Night Cycle",
+        name="Ciclo noite e dia",
         description="O emissivo estará relacionado ao ciclo da noite do dia do jogo. Quando esse valor é falso, o emissivo está sempre ligado",
         default=False,
         options=set(),
@@ -552,7 +552,7 @@ class AsoboDisableMotionBlur:
     SerializedName = "ASOBO_material_disable_motion_blur"
 
     bpy.types.Material.msfs_disable_motion_blur = bpy.props.BoolProperty(
-        name="Disable Motion Blur",
+        name="Desativar o Motion Blur",
         description="Quando esse valor está ligado, o MotionBlur está desativado no material, independentemente do que seja definido em opções gráficas",
         default=False,
         options=set(),
@@ -599,12 +599,12 @@ class AsoboPearlescent:
         pearlBrightness = 0.0
 
     bpy.types.Material.msfs_use_pearl = bpy.props.BoolProperty(
-        name="Use o efeito pérola",
+        name="Use Pearl Effect",
         default=False,
         options=set(),
     )
     bpy.types.Material.msfs_pearl_shift = bpy.props.FloatProperty(
-        name="Mudança de cor de pérola",
+        name="Pearl Color Shift",
         min=-999.0,
         max=999.0,
         default=Defaults.pearlShift,
@@ -618,7 +618,7 @@ class AsoboPearlescent:
         options=set(),
     )
     bpy.types.Material.msfs_pearl_brightness = bpy.props.FloatProperty(
-        name="Brilho da cor da pérola",
+        name="Pearl Color Brightness",
         min=-1.0,
         max=1.0,
         default=Defaults.pearlBrightness,
@@ -1204,7 +1204,7 @@ class AsoboMaterialFresnelFade:
         fresnelOpacityOffset = 1.0
 
     bpy.types.Material.msfs_fresnel_factor = bpy.props.FloatProperty(
-        name="Fator Fresnel",
+        name="Fresnel Factor",
         min=0.001,
         max=100.0,
         default=Defaults.fresnelFactor,
@@ -1370,8 +1370,7 @@ class AsoboAnisotropic:
 
 class AsoboWindshield:
 
-    SerializedName = "ASOBO_material_windshield_v2"
-    AlternateSerializedName = "ASOBO_material_windshield"
+    SerializedName = "ASOBO_material_windshield"
 
     class Defaults:
         rainDropScale = 1.0
@@ -1426,8 +1425,6 @@ class AsoboWindshield:
 
         assert isinstance(extensions, dict)
         extension = extensions.get(AsoboWindshield.SerializedName)
-        if not extension:
-            extension = extensions.get(AsoboWindshield.AlternateSerializedName)
         if extension is None:
             return
 

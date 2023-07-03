@@ -387,14 +387,7 @@ class MSFS_PT_Material(bpy.types.Panel):
                     box.label(text="Glass Parameters")
                     box.enabled = mat.msfs_material_type == "msfs_glass"
                     self.draw_prop(box, mat, "msfs_glass_reflection_mask_factor")
-                    self.draw_prop(
-                        box,
-                        mat,
-                        "msfs_day_night_cycle",
-                        enabled=(mat.msfs_material_type == "msfs_standard"),
-                    )
                     self.draw_prop(box, mat, "msfs_glass_deformation_factor")
-                    
 
                 # Parallax params
                 if mat.msfs_material_type == "msfs_parallax":
@@ -424,7 +417,7 @@ class MSFS_PT_Material(bpy.types.Panel):
                     self.draw_prop(box, mat, "msfs_ghost_power")
                     self.draw_prop(box, mat, "msfs_ghost_scale")
 
-                # Parabrisa params
+                # Windshield params
                 if mat.msfs_material_type == "msfs_windshield":
                     box = layout.box()
                     box.label(text="Windshield Parameters")

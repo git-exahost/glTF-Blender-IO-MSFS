@@ -18,9 +18,8 @@ import bpy
 from ..com import msfs_material_props as MSFSMaterialExtensions
 
 from io_scene_gltf2.blender.imp.gltf2_blender_image import BlenderImage
-
 # Compatibilidade com o blender 3.6 onde o arquivo "gltf2_blender_gather_texture_info" foi movido para a pasta material
-from io_scene_gltf2.blender.exp.material.gltf2_blender_gather_texture_info import ( 
+from io_scene_gltf2.blender.exp.material.gltf2_blender_gather_texture_info import (
     gather_texture_info,
     gather_material_normal_texture_info_class,
     gather_material_occlusion_texture_info_class,

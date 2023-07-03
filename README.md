@@ -1,6 +1,6 @@
 ## FlightSim Blender glTF 2.0 Importador e Exportador + Bloom
 
-Este repositório contém uma versão modificada do plugin de importação/exportação do Microsoft Flight Simulator para Blender, baseado na versão 1.3.0 do plugin oficial da Asobo, com algumas pequenas modificações e traduções para o Português do Brasil.
+Este repositório contém uma versão modificada do plugin de importação/exportação do Microsoft Flight Simulator para Blender, baseado na versão 1.3.1 do plugin oficial da Asobo, com algumas pequenas modificações e traduções para o Português do Brasil.
 
 Link do Plugin Oficial:
 https://github.com/AsoboStudio/glTF-Blender-IO-MSFS

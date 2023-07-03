@@ -20,9 +20,9 @@ from pathlib import Path
 
 bl_info = {
     "name": "Microsoft Flight Simulator glTF Extension",
-    "author": "Luca Pierabella, Wing42, pepperoni505, ronh991, tml1024, Sérgio Rocha, and others",
+    "author": "Luca Pierabella, Wing42, pepperoni505, ronh991, tml1024, Sérgio Rocha and others",
     "description": "Este kit de ferramentas prepara seus ativos 3D para serem usados para o Microsoft Flight Simulator",
-    "version": (1,3,1,1),
+    "version": (1,3,1,7),
     'blender': (3, 6, 0),
     "location": "File > Import-Export",
     "category": "Import-Export",
