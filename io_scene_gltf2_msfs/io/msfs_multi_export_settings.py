@@ -330,7 +330,7 @@ class MSFS_PT_export_include(bpy.types.Panel):
         col.prop(settings, "use_active_collection")
 
         col = layout.column(heading="Data", align=True)
-        #col.prop(settings, "export_extras")
+        #col.prop(settings, "export_extras") 
         col.prop(settings, "export_cameras")
         col.prop(settings, "export_lights")
  
