@@ -14,7 +14,6 @@
 
 import bpy
 
-from bpy.props import IntProperty, BoolProperty, StringProperty, FloatProperty, EnumProperty, FloatVectorProperty, PointerProperty
 
 class MSFS_attached_behavior(bpy.types.PropertyGroup):
     name: bpy.props.StringProperty(name = "behavior", default = "")
@@ -39,6 +38,6 @@ class MSFS_LI_object_properties():
     bpy.types.Object.msfs_light_flash_duration = bpy.props.FloatProperty(name='Flash duration',min=0.0,default=0.0)
     bpy.types.Object.msfs_light_flash_phase = bpy.props.FloatProperty(name='Flash phase',default=0.0)
     bpy.types.Object.msfs_light_rotation_speed = bpy.props.FloatProperty(name='Rotation speed',default=0.0)
-    bpy.types.Object.msfs_light_day_night_cycle = bpy.props.BoolProperty(name='Day/Night cycle',default=False,description="Set this value to 'true' if you want the light to be visible at night only.")
+    bpy.types.Object.msfs_light_day_night_cycle = bpy.props.BoolProperty(name='Day/Night cycle',default=False,description="Defina esse valor como 'True' se você deseja que a luz seja visível apenas à noite.")
 
     bpy.types.Object.msfs_collision_is_road_collider = bpy.props.BoolProperty(name="Road Collider", default=False)

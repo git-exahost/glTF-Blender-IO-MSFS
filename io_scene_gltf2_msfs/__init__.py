@@ -1,32 +1,33 @@
 # Copyright 2021-2022 The glTF-Blender-IO-MSFS authors.
 #
-# Licenciado sob a licença Apache, versão 2.0 (a "licença");
-# Você não pode usar esse arquivo, exceto em conformidade com a licença.
-# Você pode obter uma cópia da licença em
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
-# A menos que exigido pela lei aplicável ou acordada por escrito, software
-# distribuído sob a licença é distribuído em uma base "como está",
-# Sem garantias ou condições de qualquer tipo, expressas ou implícitas.
-# Veja a licença para o idioma específico que rege as permissões e
-# limitações sob a licença.
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-import bpy
+import importlib
 import inspect
 import pkgutil
-import importlib
 from pathlib import Path
 
+import bpy
+
 bl_info = {
-    "name": "Microsoft Flight Simulator glTF Extension",
-    "author": "Luca Pierabella, Wing42, pepperoni505, ronh991, tml1024, Sérgio Rocha and others",
-    "description": "Este kit de ferramentas prepara seus ativos 3D para serem usados para o Microsoft Flight Simulator",
-    "version": (1,3,1,7),
-    'blender': (3, 6, 0),
+    "name": "Microsoft Flight Simulator BLOOM glTF Extension",
+    "author": "Luca Pierabella, Yasmine Khodja, Wing42, pepperoni505, ronh991, sergiius, and others",
+    "description": "Esta ferramenta prepara seus ativos 3D para serem usados no Microsoft Flight Simulator.",
+    "blender": (3, 6, 0),
+    "version": (1, 3, 2, 1),
     "location": "File > Import-Export",
     "category": "Import-Export",
-    "tracker_url": "https://github.com/AsoboStudio/glTF-Blender-IO-MSFS"
+    "tracker_url": "https://github.com/git-exahost/glTF-Blender-IO-MSFS"
 }
 
 def get_version_string():
@@ -35,20 +36,22 @@ def get_version_string():
 class MSFS_ImporterProperties(bpy.types.PropertyGroup):
     enabled: bpy.props.BoolProperty(
         name='Microsoft Flight Simulator Extensions',
-        description='Enable MSFS glTF import extensions',
+        description='Ativar extensões de importação de msfs GLTF',
         default=True
     )
 
 class MSFS_ExporterProperties(bpy.types.PropertyGroup):
+
     enabled: bpy.props.BoolProperty(
         name='Microsoft Flight Simulator Extensions',
-        description='Enable MSFS glTF export extensions',
-        default=True
+        description='Ativar extensões de exportação de MSFs GLTF',
+        default=True,
     )
+
     use_unique_id: bpy.props.BoolProperty(
-        name='use_unique_id',
-        description='use ASOBO_unique_id extension',
-        default=False
+        name='Use ASOBO Unique ID',
+        description='Use a extensão de identificação exclusiva do ASOBO',
+        default=True,
     )
     
 
@@ -104,7 +107,7 @@ class GLTF_PT_MSFSExporterExtensionPanel(bpy.types.Panel):
 
         layout.prop(props, 'enabled', text="Enabled")
         if props.enabled:
-            layout.prop(props, 'use_unique_id', text="Enable ASOBO_unique_id extension")
+            layout.prop(props, 'use_unique_id', text="Enable ASOBO Unique ID extension")
 
 def recursive_module_search(path, root=""):
     for _, name, ispkg in pkgutil.iter_modules([str(path)]):
@@ -208,12 +211,20 @@ def unregister_panel():
         if hasattr(module, "unregister_panel"):
             module.unregister_panel()
 
+
+##################################################################################
 from .io.msfs_import import Import
+
+
 class glTF2ImportUserExtension(Import):
     def __init__(self):
         self.properties = bpy.context.scene.msfs_importer_properties
 
+
+##################################################################################
 from .io.msfs_export import Export
+
+
 class glTF2ExportUserExtension(Export):
     def __init__(self):
         # We need to wait until we create the gltf2UserExtension to import the gltf2 modules
