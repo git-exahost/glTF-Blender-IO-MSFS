@@ -1,23 +1,23 @@
 ## FlightSim Blender glTF 2.0 Importador e Exportador + Bloom
 
-Este repositório contém uma versão modificada do plugin de importação/exportação do Microsoft Flight Simulator para Blender, baseado na versão 1.3.2 do plugin oficial da Asobo, com algumas pequenas modificações e traduções para o Português do Brasil.
+Este repositório apresenta uma versão aprimorada do plugin de importação/exportação do Microsoft Flight Simulator para o Blender, baseada na versão 1.3.2 do plugin oficial da Asobo. Foram realizadas algumas modificações e traduções para o Português do Brasil.
 
-Link do Plugin Oficial:
-https://github.com/AsoboStudio/glTF-Blender-IO-MSFS
+Link para o Plugin Oficial:
+[https://github.com/AsoboStudio/glTF-Blender-IO-MSFS](https://github.com/AsoboStudio/glTF-Blender-IO-MSFS)
 
-Este plugin desbloqueia o recurso **Emissive Color** responsável por gerar Light Bloom ou Glow, que reproduz os efeitos de iluminação do mundo real. O efeito Bloom funciona aplicando um filtro na imagem que aumenta o brilho das partes mais claras e cria um borrão nas bordas. Isso faz com que a luz pareça mais intensa e difusa, como acontece na vida real quando olhamos para uma fonte de luz muito forte.
+Este plugin desbloqueia a funcionalidade **Emissive Color**, responsável por gerar o efeito Light Bloom ou Glow, reproduzindo os efeitos de iluminação do mundo real. O efeito Bloom trabalha aplicando um filtro na imagem, aumentando o brilho das áreas mais claras e criando um borrão nas bordas. Isso resulta em uma luz mais intensa e difusa, semelhante ao que ocorre na vida real ao olhar para uma fonte de luz muito forte.
 
 #### Como utilizar o efeito Bloom ao gear o gLTF para a SDK
 
-Em **MSFS Material Params**, como na imagem abaixo, selecione **Emissive Color** e aumente seu valor para **1**. Este é o valor máximo de emissão. Observe que agora o objeto passa a emitir a iluminação brilhando no escuro, mas ele ainda não emite o efeito Bloom.
+No painel **MSFS Material Params**, conforme ilustrado na imagem abaixo, selecione a opção **Emissive Color** e ajuste o seu valor para **1**. Este representa o valor máximo de emissão. Observe que o objeto agora emite iluminação, brilhando no escuro, embora o efeito Bloom ainda não esteja ativo.
 
 ![MSFS Material Params](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/MSFSMaterialParams.jpg)
 
-Para adicionar o efeito Bloom, procure por **General Parameters** e altere o parâmetro **Emissive Scale**, e adicione valores acima de 1; quanto maior o valor, maior será o nível de emissão. Os valores adicionados serão multiplicados pelo **Emissive Color** definido, gerando o efeito Bloom. Fique à vontade para testar diversos valores.
+Para incorporar o efeito Bloom, navegue até **General Parameters** e ajuste o parâmetro **Emissive Scale**, adicionando valores acima de 1. Quanto maior o valor, mais intensa será a emissão luminosa. Os valores adicionados serão multiplicados pelo **Emissive Color** definido, resultando no efeito Bloom desejado. Sinta-se à vontade para experimentar diferentes valores.
 
 ![Emission Strengths](https://github.com/git-exahost/glTF-Blender-IO-MSFS/blob/main/misc/GeneralParameters.jpg)
 
-Para ver o resultado do efeito Bloom no Blender sem ter que compilar e gerar o glTF, vá em **Render Properties** e marque o item **Reluzir**, como na imagem abaixo:
+Para visualizar o resultado do efeito Bloom no Blender sem a necessidade de compilar ou gerar o gLTF, vá até **Render Properties** e marque a opção **Reluzir**, conforme apresentado na imagem abaixo:
 
 ![Reluzir](https://raw.githubusercontent.com/git-exahost/glTF-Blender-IO-MSFS/main/misc/Reluzir.jpg) 
 
