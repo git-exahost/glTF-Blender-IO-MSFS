@@ -23,7 +23,7 @@ Para visualizar o resultado do efeito Bloom no Blender sem a necessidade de comp
 
 #### Guia de Instalação do Plugin Blender
 
-Esta versão é projetada para compatibilidade com o **Blender 3.6.4** e o **Blender 3.6.4**. <br>
+Esta versão é projetada para compatibilidade com o **Blender 3.6.4** e o **Blender 4.0**. <br>
 
 Certifique-se de ter o **Blender 3.6.4** instalado, utilizando o link abaixo:<br>
 [Download Blender 3.6.4](https://www.blender.org/download/lts/3-6/)
